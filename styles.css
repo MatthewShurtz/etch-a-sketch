@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Potta+One&display=swap");
+
+* {
+  font-family: "Potta One", cursive;
+  text-align: center;
+}
+
+body {
+  background-image: linear-gradient(to right, #fffffa, #dad7d2, #a9a9b2);
+}
+
+h1 {
+  font-size: 50px;
+}
+
+button {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+}
+
+.sketch-field {
+  margin: auto;
+  margin-top: 20px;
+  border: 5px solid black;
+  width: 600px;
+  height: 500px;
+  display: grid;
+}
+
+.grid-box {
+  border: 1px solid black;
+}
