@@ -5,6 +5,7 @@ const colorFill = document.querySelector(".colors");
 const clearBtn = document.querySelector(".clear-btn");
 const sketchField = document.querySelector(".sketch-field")
 let gridBoxes = document.querySelector(".grid-box");
+let colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
 
 // Grid Size
 let bigSq = 15;
@@ -27,16 +28,14 @@ gridSketch = (num) => {
     }
 }
 
-   
-
+// rainbow color generator function.
 setRainbowColors = () => {
     let colorGrid = document.querySelectorAll(".grid-box");
     if (sketchField.hasChildNodes()) {
         colorGrid.forEach(color = (grid) => {
             grid.addEventListener("mouseover", () => {
-            let colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
-            randomColor = colors[Math.floor(Math.random() * colors.length)];
-            grid.style.backgroundColor = randomColor;
+                randomColor = colors[Math.floor(Math.random() * colors.length)];
+                grid.style.backgroundColor = randomColor;
             })
         });
     }
@@ -48,26 +47,26 @@ clearField = () => {
     }
 }
 
-
 // Listeners
 // changes size of squares
 bigSqBtn.addEventListener("click", () => {
-        clearField();
-        gridField(bigSq);
-        gridSketch(bigSq);
+    clearField();
+    gridField(bigSq);
+    gridSketch(bigSq);
 });
 
 smallSqBtn.addEventListener("click", () => {
-        clearField();
-        gridField(smallSq);
-        gridSketch(smallSq);
+    clearField();
+    gridField(smallSq);
+    gridSketch(smallSq);
 });
-// creates random colors. Button will go through crazy colors as well.
+
+// creates rainbow colors
 colorFill.addEventListener("click", () => {
     setRainbowColors();
 })
+
 // clears field and resets grid
 clearBtn.addEventListener("click", () => {
     clearField();
 })
-
